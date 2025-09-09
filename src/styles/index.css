@@ -1,0 +1,27 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.searchItem {
+  position: relative;
+  top: 300px;
+  left: 400px;
+  z-index: 10;
+}
+
+.submitDate {
+  position: relative;
+  top: 300px;
+  left: 400px;
+  z-index: 10;
+}
+
+.option-select {
+  position: relative;
+  top: 300px;
+  left: 400px;
+  z-index: 10;
+  width: 200px;
+}
