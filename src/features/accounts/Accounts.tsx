@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import type { SearchDates, SelectableItem } from "../../types";
+import type { SearchDates, SelectableItem } from '../../types';
 
-import { filterAccounts } from "../transactions/utils/filterAccounts";
+import { filterAccounts } from '../transactions/utils/filterAccounts';
 
-import Items from "../../components/Items";
-import SearchSection from "../../components/search/SearchSection";
-import type { AccountData } from "./types/dummyAccounts";
+import Items from '../../components/Items';
+import SearchSection from '../../components/search/SearchSection';
+import type { Account } from './types/accountTypes';
 
 type Props = {
-  accounts: AccountData[];
+  accounts: Account[];
 };
 
 function Accounts({ accounts }: Props) {
@@ -19,19 +19,21 @@ function Accounts({ accounts }: Props) {
   });
 
   const [currencySearch, setCurrencySearch] = useState<SelectableItem[]>([
-    { id: 0, name: "USD (1)", status: true },
-    { id: 1, name: "Savings (2)", status: true },
+    { id: 0, name: 'EUR (0)', status: true },
+    { id: 1, name: 'USD (1)', status: true },
   ]);
+
   const [typeSearch, setTypeSearch] = useState<SelectableItem[]>([
-    { id: 0, name: "Checking (1)", status: true },
-    { id: 1, name: "Savings (2)", status: true },
-    { id: 2, name: "Credit (3)", status: true },
+    { id: 0, name: 'Checking (0)', status: true },
+    { id: 1, name: 'Savings (1)', status: true },
+    { id: 2, name: 'Cash (2)', status: true },
+    { id: 3, name: 'Investment (3)', status: true },
   ]);
 
   return (
     <>
       <Items
-        title={"Accounts"}
+        title={'Accounts'}
         items={filterAccounts(
           accounts,
           typeSearch,
