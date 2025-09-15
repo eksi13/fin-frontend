@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import type { SearchDates, SelectableItem } from '../../types';
 
-import { filterAccounts } from '../transactions/utils/filterAccounts';
+import { filterAccounts } from './utils/filterAccounts';
 
 import Items from '../../components/Items';
 import SearchSection from '../../components/search/SearchSection';
