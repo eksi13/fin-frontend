@@ -8,14 +8,15 @@ import type {
 
 import Items from "../../components/Items";
 import SearchSection from "../../components/search/SearchSection";
-import type { CategoryData } from "./types/dummyCategories";
 import { filterCategories } from "./utils/filterCategories";
+import type { Category } from "./types/categoryTypes";
 
 type Props = {
-  categories: CategoryData[];
+  categories: Category[];
+  errorMessage: string;
 };
 
-function Categories({ categories }: Props) {
+function Categories({ categories, errorMessage }: Props) {
   const [categoryTypeSearch, setCategoryTypeSearch] = useState<
     SelectableItem[]
   >([
@@ -37,12 +38,16 @@ function Categories({ categories }: Props) {
     <>
       <Items
         title={"Categories"}
-        items={filterCategories(
-          categories,
-          categoryTypeSearch,
-          searchDates,
-          searchAmounts
-        )}
+        items={categories
+        //   filterCategories(
+        //   categories,
+        //   categoryTypeSearch,
+        //   searchDates,
+        //   searchAmounts
+        // )
+      }
+        errorMessage={errorMessage}
+
       />
       <SearchSection
         setSearchDates={setSearchDates}
