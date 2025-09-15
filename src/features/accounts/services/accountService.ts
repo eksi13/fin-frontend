@@ -1,4 +1,5 @@
 import type { Account } from '../types/accountTypes';
+import { mapAccount } from '../utils/mapAccountData';
 
 export async function fetchAccounts(
   API_URL: string
@@ -12,11 +13,4 @@ export async function fetchAccounts(
   const rawAccounts = await response.json();
   return Object.values(rawAccounts).map((rawAccount) => mapAccount(rawAccount));
   // setFetchError('');
-}
-
-function mapAccount(rawAccount: any): Account {
-  return {
-    ...rawAccount,
-    lastUpdated: new Date((rawAccount.lastUpdated as string).replace(' ', 'T')),
-  };
 }
