@@ -10,9 +10,10 @@ import type { Account } from './types/accountTypes';
 
 type Props = {
   accounts: Account[];
+  errorMessage: string;
 };
 
-function Accounts({ accounts }: Props) {
+function Accounts({ accounts, errorMessage }: Props) {
   const [searchDates, setSearchDates] = useState<SearchDates>({
     min: 0,
     max: Date.now(),
@@ -40,6 +41,7 @@ function Accounts({ accounts }: Props) {
           currencySearch,
           searchDates
         )}
+        errorMessage={errorMessage}
       />
       <SearchSection
         setSearchDates={setSearchDates}
