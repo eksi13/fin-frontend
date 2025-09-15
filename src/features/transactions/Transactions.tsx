@@ -7,7 +7,7 @@ import type {
 } from "../../types";
 import type { TransactionData } from "./types/dummyTransactions";
 
-import { filterTransactions } from "../accounts/utils/filterTransactions";
+import { filterTransactions } from "./utils/filterTransactions";
 
 import Items from "../../components/Items";
 import SearchSection from "../../components/search/SearchSection";

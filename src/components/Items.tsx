@@ -1,25 +1,26 @@
-import "../styles/Items.css";
-import "../styles/Table.css";
-import Table from "./table/Table";
-import type { hasID } from "../types";
+import '../styles/Items.css';
+import '../styles/Table.css';
+import Table from './table/Table';
+import type { HasID } from '../types';
 
-type Props<T extends hasID> = {
+type Props<T extends HasID> = {
   items: Array<T>;
   title: string;
+  errorMessage: string;
 };
 
-function Items<T extends hasID>({ title, items }: Props<T>) {
+function Items<T extends HasID>({ title, items, errorMessage }: Props<T>) {
   return (
     <div className="items">
+      <h2 className="title">{title}</h2>
       {items.length ? (
         <>
-          <h2 className="title">{title}</h2>
           <div className="table-container">
             <Table items={items} />
           </div>
         </>
       ) : (
-        <p>{`no ${title.toLowerCase()} found`}</p>
+        <p className='error'>{errorMessage}</p>
       )}
     </div>
   );

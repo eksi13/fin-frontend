@@ -8,7 +8,6 @@ import type {
 
 import Items from "../../components/Items";
 import SearchSection from "../../components/search/SearchSection";
-import { filterCategories } from "./utils/filterCategories";
 import type { Category } from "./types/categoryTypes";
 
 type Props = {
