@@ -2,7 +2,7 @@ import type { Transaction } from '../types/transactionTypes';
 import { mapTransactionData } from '../utils/mapTransactionData';
 import { fetchItems } from '../../../services/utils';
 
-export async function fetchTransaction(
+export async function fetchTransactions(
   API_URL: string
 ): Promise<Transaction[] | undefined> {
   try {
