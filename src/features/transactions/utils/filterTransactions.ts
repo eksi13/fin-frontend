@@ -1,4 +1,4 @@
-import type { TransactionData } from "../types/dummyTransactions";
+import type { Transaction } from "../types/transactionTypes";
 import type {
   SearchAmounts,
   SearchDates,
@@ -6,7 +6,7 @@ import type {
 } from "../../../types";
 
 export function filterTransactions(
-  transactions: TransactionData[],
+  transactions: Transaction[],
   searchAmounts: SearchAmounts,
   searchDates: SearchDates,
   categories: SelectableItem[],
