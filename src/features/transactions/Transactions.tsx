@@ -1,19 +1,21 @@
-import { useState } from 'react';
+// React
+import { useEffect, useState } from 'react';
 
-import type { SearchAmounts, SearchDates, SelectableItem } from '../../types';
+// Types
 import type { Transaction } from './types/transactionTypes';
+import type { SearchAmounts, SearchDates, SelectableItem } from '../../types';
 
+// Utilities / Services
 import { filterTransactions } from './utils/filterTransactions';
+import { fetchTransactions } from './services/transactionService';
 
+// Components
 import Items from '../../components/Items';
 import SearchSection from '../../components/search/SearchSection';
 
-type Props = {
-  transactions: Transaction[];
-  errorMessage: string;
-};
+type Props = {};
 
-function Transactions({ transactions, errorMessage }: Props) {
+function Transactions({}: Props) {
   const [categorySearch, setCategorySearch] = useState<SelectableItem[]>([
     { id: 0, name: 'Category 1', status: true },
     { id: 1, name: 'Category 2', status: true },
@@ -48,6 +50,23 @@ function Transactions({ transactions, errorMessage }: Props) {
     max: Date.now(),
   });
 
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [fetchError, setfetchError] = useState<string>('');
+
+  const API_URL = String(import.meta.env.VITE_API_URL + 'transactions');
+
+  useEffect(() => {
+    fetchTransactions(API_URL)
+      .then((transactions) => {
+        setTransactions(transactions || []);
+      })
+      .catch((err: unknown) => {
+        err instanceof Error
+          ? setfetchError(err.message)
+          : setfetchError('unknown error');
+      });
+  }, []);
+
   return (
     <>
       <Items
@@ -64,7 +83,7 @@ function Transactions({ transactions, errorMessage }: Props) {
             accountSearch
           )
         }
-        errorMessage={errorMessage}
+        errorMessage={fetchError}
       />
       <SearchSection
         setSearchAmounts={setSearchAmounts}
