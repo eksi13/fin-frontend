@@ -8,4 +8,4 @@ export interface RawCategory {
 
 export interface Category extends Omit<RawCategory, 'lastUpdated'> {
   lastUpdated: Date;
-};
+}

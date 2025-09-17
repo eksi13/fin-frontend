@@ -43,7 +43,7 @@ function Categories({ categories, errorMessage }: Props) {
         errorMessage={errorMessage}
       />
       <SearchSection
-        setSearchDates={setSearchDates}
+        setSearchDates={[setSearchDates]}
         setSearchAmounts={setSearchAmounts}
         optionsSelectors={[
           { options: categoryTypeSearch, setter: setCategoryTypeSearch },
