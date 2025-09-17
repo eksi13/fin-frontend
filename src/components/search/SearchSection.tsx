@@ -1,6 +1,9 @@
+// Search Components
 import AmountSearch from './AmountSearch';
 import DateSearch from './DateSearch';
 import OptionSelector from './OptionSelector';
+
+// Types
 import type {
   SearchAmounts,
   SearchDates,

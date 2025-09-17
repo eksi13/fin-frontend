@@ -1,4 +1,7 @@
+// Types
 import type { Category } from '../types/categoryTypes';
+
+// Services / Utils
 import { mapCategoryData } from '../utils/mapCategoryData';
 import { fetchItems } from '../../../services/utils';
 

@@ -1,4 +1,5 @@
-import "../../styles/index.css";
+// Styles
+import '../../styles/index.css';
 
 type Props = {
   search: string;

@@ -1,3 +1,4 @@
+// Types
 import type { Category } from '../types/categoryTypes';
 import type {
   SearchDates,

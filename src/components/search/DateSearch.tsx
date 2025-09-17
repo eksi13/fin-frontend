@@ -1,7 +1,9 @@
-import "../../styles/index.css";
-import type { SearchDates } from "../../types";
-import type { AddItemFormElement } from "../../types/forms";
+// Styles
+import '../../styles/index.css';
 
+// Types
+import type { SearchDates } from '../../types';
+import type { AddItemFormElement } from '../../types/forms';
 
 type Props = {
   setSearchDates: React.Dispatch<React.SetStateAction<SearchDates>>;

@@ -1,3 +1,4 @@
+// Types
 import type { Account } from '../types/accountTypes';
 import type { SearchDates, SelectableItem } from '../../../types';
 

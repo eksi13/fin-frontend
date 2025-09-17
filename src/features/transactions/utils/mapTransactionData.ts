@@ -1,3 +1,4 @@
+// Types
 import type { Transaction } from '../types/transactionTypes';
 
 export function mapTransactionData(rawTransaction: any): Transaction {

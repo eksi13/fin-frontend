@@ -1,7 +1,14 @@
-import { useState, type ChangeEvent } from "react";
-import "../../styles/index.css";
-import type { SelectableItem } from "../../types";
-import OptionItem from "./OptionItem";
+// Styles
+import '../../styles/index.css';
+
+// React / Router Components
+import { useState, type ChangeEvent } from 'react';
+
+// Types
+import type { SelectableItem } from '../../types';
+
+// Search Components
+import OptionItem from './OptionItem';
 
 type Props = {
   options: SelectableItem[];

@@ -1,4 +1,5 @@
-import "../../styles/Table.css"
+// Styles
+import '../../styles/Table.css';
 
 type Props = {
   value: string;

@@ -1,12 +1,15 @@
-import Row from "./Row";
-import type { hasID } from "../../types";
-import Cell from "./Cell";
+// Table Components
+import Row from './Row';
+import Cell from './Cell';
 
-type Props<T extends hasID> = {
+// Types
+import type { HasID } from '../../types';
+
+type Props<T extends HasID> = {
   items: T[];
 };
 
-function Table<T extends hasID>({ items }: Props<T>) {
+function Table<T extends HasID>({ items }: Props<T>) {
   const keys = Object.keys(items[0]);
   return (
     <table>

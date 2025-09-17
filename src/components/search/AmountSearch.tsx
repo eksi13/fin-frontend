@@ -1,8 +1,11 @@
-import "../../styles/index.css";
+// Styles
+import '../../styles/index.css';
 
-import type { SearchAmounts } from "../../types";
+// Page Components
+import type { SearchAmounts } from '../../types';
 
-import type { AddItemFormElement } from "../../types/forms";
+// Types
+import type { AddItemFormElement } from '../../types/forms';
 
 type Props = {
   setSearchAmounts: React.Dispatch<React.SetStateAction<SearchAmounts>>;
@@ -32,10 +35,7 @@ function AmountSearch({ setSearchAmounts }: Props) {
   };
 
   return (
-    <form
-      className="searchItem"
-      onSubmit={handleSubmit}
-    >
+    <form className="searchItem" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="search" />
         <input

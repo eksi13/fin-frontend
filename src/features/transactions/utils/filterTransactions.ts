@@ -1,3 +1,4 @@
+// Types
 import type { Transaction } from '../types/transactionTypes';
 import type {
   SearchAmounts,

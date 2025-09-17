@@ -1,6 +1,11 @@
+// Styles
 import '../styles/Items.css';
 import '../styles/Table.css';
+
+// Table Components
 import Table from './table/Table';
+
+// Types
 import type { HasID } from '../types';
 
 type Props<T extends HasID> = {
@@ -20,7 +25,7 @@ function Items<T extends HasID>({ title, items, errorMessage }: Props<T>) {
           </div>
         </>
       ) : (
-        <p className='error'>{errorMessage}</p>
+        <p className="error">{errorMessage}</p>
       )}
     </div>
   );

@@ -1,6 +1,9 @@
+// Types
 import type { Account } from '../types/accountTypes';
-import { mapAccountData } from '../utils/mapAccountData';
+
+// Services / Utils
 import { fetchItems } from '../../../services/utils';
+import { mapAccountData } from '../utils/mapAccountData';
 
 export async function fetchAccounts(
   API_URL: string

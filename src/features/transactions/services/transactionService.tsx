@@ -1,4 +1,7 @@
+// Types
 import type { Transaction } from '../types/transactionTypes';
+
+// Services / Utils
 import { mapTransactionData } from '../utils/mapTransactionData';
 import { fetchItems } from '../../../services/utils';
 
