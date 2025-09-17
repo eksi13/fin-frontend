@@ -9,15 +9,13 @@ import SearchSection from '../../components/search/SearchSection';
 import type { Account } from './types/accountTypes';
 import { fetchAccounts } from './services/accountService';
 
-
 type Props = {
   // accountsOld: Account[];
   // errorMessageOld: string;
 };
 
-function Accounts({ 
-  // accountsOld, errorMessageOld 
-}: Props) {
+function Accounts({}: // accountsOld, errorMessageOld
+Props) {
   const [searchDates, setSearchDates] = useState<SearchDates>({
     min: 0,
     max: Date.now(),
@@ -40,7 +38,7 @@ function Accounts({
   const [fetchError, setfetchError] = useState<string>('');
 
   useEffect(() => {
-    console.log("accounts component");
+    console.log('accounts component');
     fetchAccounts(API_URL + 'accounts')
       .then((accounts) => {
         setAccounts(accounts || []);
@@ -51,8 +49,6 @@ function Accounts({
           : setfetchError('unknown error');
       });
   }, []);
-
-  
 
   return (
     <>
