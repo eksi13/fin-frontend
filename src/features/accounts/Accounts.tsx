@@ -9,13 +9,9 @@ import SearchSection from '../../components/search/SearchSection';
 import type { Account } from './types/accountTypes';
 import { fetchAccounts } from './services/accountService';
 
-type Props = {
-  // accountsOld: Account[];
-  // errorMessageOld: string;
-};
+type Props = {};
 
-function Accounts({}: // accountsOld, errorMessageOld
-Props) {
+function Accounts({}: Props) {
   const [searchDates, setSearchDates] = useState<SearchDates>({
     min: 0,
     max: Date.now(),
