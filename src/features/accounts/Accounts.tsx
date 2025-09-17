@@ -44,7 +44,7 @@ function Accounts({ accounts, errorMessage }: Props) {
         errorMessage={errorMessage}
       />
       <SearchSection
-        setSearchDates={setSearchDates}
+        setSearchDates={[setSearchDates]}
         optionsSelectors={[
           { options: typeSearch, setter: setTypeSearch },
           { options: currencySearch, setter: setCurrencySearch },

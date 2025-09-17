@@ -1,4 +1,4 @@
-import type { Account } from "../types/accountTypes";
+import type { Account } from '../types/accountTypes';
 
 export function mapAccountData(rawAccount: any): Account {
   return {

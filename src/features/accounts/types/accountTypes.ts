@@ -9,4 +9,4 @@ export interface RawAccount {
 
 export interface Account extends Omit<RawAccount, 'lastUpdated'> {
   lastUpdated: Date;
-};
+}
