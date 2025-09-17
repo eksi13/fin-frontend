@@ -33,13 +33,12 @@ function Accounts({}: Props) {
     { id: 3, name: 'Investment (3)', status: true },
   ]);
 
-  const API_URL = String(import.meta.env.VITE_API_URL);
+  const API_URL = String(import.meta.env.VITE_API_URL + 'accounts');
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [fetchError, setfetchError] = useState<string>('');
 
   useEffect(() => {
-    console.log('accounts component');
-    fetchAccounts(API_URL + 'accounts')
+    fetchAccounts(API_URL)
       .then((accounts) => {
         setAccounts(accounts || []);
       })
