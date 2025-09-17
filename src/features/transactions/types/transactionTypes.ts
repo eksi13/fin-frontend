@@ -9,6 +9,8 @@ export interface RawTransaction {
   lastUpdated: string;
 }
 
-export interface Transaction extends Omit<RawTransaction, 'lastUpdated'> {
+export interface Transaction
+  extends Omit<RawTransaction, 'date' | 'lastUpdated'> {
+  date: Date;
   lastUpdated: Date;
 }

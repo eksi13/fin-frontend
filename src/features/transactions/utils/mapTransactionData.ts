@@ -1,8 +1,11 @@
-import type { Transaction } from "../types/transactionTypes";
+import type { Transaction } from '../types/transactionTypes';
 
 export function mapTransactionData(rawTransaction: any): Transaction {
   return {
     ...rawTransaction,
-    lastUpdated: new Date((rawTransaction.lastUpdated as string).replace(' ', 'T')),
+    date: new Date(rawTransaction.date),
+    lastUpdated: new Date(
+      (rawTransaction.lastUpdated as string).replace(' ', 'T')
+    ),
   };
 }
