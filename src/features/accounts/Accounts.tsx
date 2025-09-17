@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import type { SearchDates, SelectableItem } from '../../types';
 
@@ -7,13 +7,17 @@ import { filterAccounts } from './utils/filterAccounts';
 import Items from '../../components/Items';
 import SearchSection from '../../components/search/SearchSection';
 import type { Account } from './types/accountTypes';
+import { fetchAccounts } from './services/accountService';
+
 
 type Props = {
-  accounts: Account[];
-  errorMessage: string;
+  // accountsOld: Account[];
+  // errorMessageOld: string;
 };
 
-function Accounts({ accounts, errorMessage }: Props) {
+function Accounts({ 
+  // accountsOld, errorMessageOld 
+}: Props) {
   const [searchDates, setSearchDates] = useState<SearchDates>({
     min: 0,
     max: Date.now(),
@@ -31,6 +35,25 @@ function Accounts({ accounts, errorMessage }: Props) {
     { id: 3, name: 'Investment (3)', status: true },
   ]);
 
+  const API_URL = String(import.meta.env.VITE_API_URL);
+  const [accounts, setAccounts] = useState<Account[]>([]);
+  const [fetchError, setfetchError] = useState<string>('');
+
+  useEffect(() => {
+    console.log("accounts component");
+    fetchAccounts(API_URL + 'accounts')
+      .then((accounts) => {
+        setAccounts(accounts || []);
+      })
+      .catch((err: unknown) => {
+        err instanceof Error
+          ? setfetchError(err.message)
+          : setfetchError('unknown error');
+      });
+  }, []);
+
+  
+
   return (
     <>
       <Items
@@ -41,7 +64,7 @@ function Accounts({ accounts, errorMessage }: Props) {
           currencySearch,
           searchDates
         )}
-        errorMessage={errorMessage}
+        errorMessage={fetchError}
       />
       <SearchSection
         setSearchDates={[setSearchDates]}
