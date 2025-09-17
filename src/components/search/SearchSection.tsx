@@ -1,15 +1,15 @@
-import AmountSearch from "./AmountSearch";
-import DateSearch from "./DateSearch";
-import OptionSelector from "./OptionSelector";
+import AmountSearch from './AmountSearch';
+import DateSearch from './DateSearch';
+import OptionSelector from './OptionSelector';
 import type {
   SearchAmounts,
   SearchDates,
   OptionSelectorConfig,
-} from "../../types";
+} from '../../types';
 
 type Props = {
   setSearchAmounts?: React.Dispatch<React.SetStateAction<SearchAmounts>>;
-  setSearchDates: React.Dispatch<React.SetStateAction<SearchDates>>;
+  setSearchDates: React.Dispatch<React.SetStateAction<SearchDates>>[];
   optionsSelectors: OptionSelectorConfig[];
 };
 
@@ -21,7 +21,9 @@ function SearchSection({
   return (
     <>
       {setSearchAmounts && <AmountSearch setSearchAmounts={setSearchAmounts} />}
-      <DateSearch setSearchDates={setSearchDates} />
+      {setSearchDates.map((setter, i) => (
+        <DateSearch key={i} setSearchDates={setter} />
+      ))}
 
       {optionsSelectors.map((item, index) => (
         <OptionSelector
