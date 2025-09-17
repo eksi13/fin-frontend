@@ -50,7 +50,7 @@ function AmountSearch({ setSearchAmounts }: Props) {
           role="searchbox"
           placeholder={`Search Max Amount`}
         />
-        <button type="submit">Submit</button>
+        <button className='button' type="submit">Submit</button>
       </div>
     </form>
   );

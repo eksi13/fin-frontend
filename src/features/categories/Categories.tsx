@@ -12,6 +12,7 @@ import { fetchCategories } from './services/categoryService';
 // Components
 import Items from '../../components/Items';
 import SearchSection from '../../components/search/SearchSection';
+import SearchBar from '../../components/layout/SearchBar';
 
 type Props = {};
 
@@ -49,6 +50,8 @@ function Categories({}: Props) {
       });
   }, []);
 
+  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
+
   return (
     <>
       <Items
@@ -61,7 +64,10 @@ function Categories({}: Props) {
         )}
         errorMessage={fetchError}
       />
-      <SearchSection
+      <SearchBar
+        name={'Categories'}
+        buttonClicked={buttonClicked}
+        setButtonClicked={setButtonClicked}
         setSearchDates={[setSearchDates]}
         setSearchAmounts={setSearchAmounts}
         optionsSelectors={[

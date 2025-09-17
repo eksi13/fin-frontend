@@ -16,18 +16,21 @@ type Props<T extends HasID> = {
 
 function Items<T extends HasID>({ title, items, errorMessage }: Props<T>) {
   return (
-    <div className="items">
-      <h2 className="title">{title}</h2>
-      {items.length ? (
-        <>
-          <div className="table-container">
-            <Table items={items} />
-          </div>
-        </>
-      ) : (
-        <p className="error">{errorMessage}</p>
-      )}
-    </div>
+    <>
+      <div className="items">
+        <h2 className="title">{title}</h2>
+        {/* <div className="search-bar"></div> */}
+        {items.length ? (
+          <>
+            <div className="table-container">
+              <Table items={items} />
+            </div>
+          </>
+        ) : (
+          <p className="error">{errorMessage}</p>
+        )}
+      </div>
+    </>
   );
 }
 

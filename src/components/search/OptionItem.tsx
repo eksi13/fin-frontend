@@ -1,3 +1,5 @@
+import '../../styles/index.css'
+
 type Props = {
   index: number;
   name: string;
@@ -7,15 +9,18 @@ type Props = {
 
 function OptionItem({ index, name, status, handleCheck }: Props) {
   return (
-    <div>
+    <div className='option-item'>
       <input
         type="checkbox"
         id={index.toString()}
         name={name}
         checked={status}
         onChange={handleCheck}
+        className="custom-checkbox"
       />
-      <label htmlFor={name}>{name}</label>
+      <label htmlFor={name} className="checkbox-label">
+        {name}
+      </label>
     </div>
   );
 }

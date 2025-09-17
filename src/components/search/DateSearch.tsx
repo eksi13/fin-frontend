@@ -46,7 +46,7 @@ function DateSearch({ setSearchDates }: Props) {
           min="1999-01-01"
           max="2030-12-31"
         />
-        <button type="submit">Submit</button>
+        <button className="button" type="submit">Submit</button>
       </div>
     </form>
   );

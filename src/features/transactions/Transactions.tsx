@@ -12,6 +12,7 @@ import { fetchTransactions } from './services/transactionService';
 // Components
 import Items from '../../components/Items';
 import SearchSection from '../../components/search/SearchSection';
+import SearchBar from '../../components/layout/SearchBar';
 
 type Props = {};
 
@@ -67,12 +68,13 @@ function Transactions({}: Props) {
       });
   }, []);
 
+  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
+
   return (
     <>
       <Items
         title={'Transactions'}
         items={
-          // transactions
           filterTransactions(
             transactions,
             searchAmounts,
@@ -85,9 +87,12 @@ function Transactions({}: Props) {
         }
         errorMessage={fetchError}
       />
-      <SearchSection
-        setSearchAmounts={setSearchAmounts}
+      <SearchBar
+        name={'Transactions'}
+        buttonClicked={buttonClicked}
+        setButtonClicked={setButtonClicked}
         setSearchDates={[setSearchDates, setSearchUpdated]}
+        setSearchAmounts={setSearchAmounts}
         optionsSelectors={[
           { options: categorySearch, setter: setCategorySearch },
           { options: accountSearch, setter: setAccountSearch },

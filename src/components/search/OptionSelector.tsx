@@ -44,7 +44,7 @@ function OptionSelector({ options, setter }: Props) {
             handleCheck={handleCheck}
           />
         ))}
-        <button type="submit">Submit</button>
+        <button className="button" type="submit">Submit</button>
       </fieldset>
     </form>
   );

@@ -11,7 +11,7 @@ import { fetchAccounts } from './services/accountService';
 
 // Components
 import Items from '../../components/Items';
-import SearchSection from '../../components/search/SearchSection';
+import SearchBar from '../../components/layout/SearchBar';
 
 type Props = {};
 
@@ -49,6 +49,8 @@ function Accounts({}: Props) {
       });
   }, []);
 
+  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
+
   return (
     <>
       <Items
@@ -61,12 +63,15 @@ function Accounts({}: Props) {
         )}
         errorMessage={fetchError}
       />
-      <SearchSection
+      <SearchBar
+        name={'Accounts'}
+        buttonClicked={buttonClicked}
+        setButtonClicked={setButtonClicked}
         setSearchDates={[setSearchDates]}
         optionsSelectors={[
-          { options: typeSearch, setter: setTypeSearch },
-          { options: currencySearch, setter: setCurrencySearch },
-        ]}
+            { options: typeSearch, setter: setTypeSearch },
+            { options: currencySearch, setter: setCurrencySearch },
+          ]}
       />
     </>
   );
