@@ -1,14 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import type {
-  SearchAmounts,
-  SearchDates,
-  SelectableItem,
-} from "../../types";
+import type { SearchAmounts, SearchDates, SelectableItem } from '../../types';
 
-import Items from "../../components/Items";
-import SearchSection from "../../components/search/SearchSection";
-import type { Category } from "./types/categoryTypes";
+import Items from '../../components/Items';
+import SearchSection from '../../components/search/SearchSection';
+import type { Category } from './types/categoryTypes';
+import { filterCategories } from './utils/filterCategories';
 
 type Props = {
   categories: Category[];
@@ -19,8 +16,8 @@ function Categories({ categories, errorMessage }: Props) {
   const [categoryTypeSearch, setCategoryTypeSearch] = useState<
     SelectableItem[]
   >([
-    { id: 0, name: "Income (0)", status: true },
-    { id: 1, name: "Expense (1)", status: true },
+    { id: 0, name: 'Income (0)', status: true },
+    { id: 1, name: 'Expense (1)', status: true },
   ]);
 
   const [searchAmounts, setSearchAmounts] = useState<SearchAmounts>({
@@ -36,17 +33,14 @@ function Categories({ categories, errorMessage }: Props) {
   return (
     <>
       <Items
-        title={"Categories"}
-        items={categories
-        //   filterCategories(
-        //   categories,
-        //   categoryTypeSearch,
-        //   searchDates,
-        //   searchAmounts
-        // )
-      }
+        title={'Categories'}
+        items={filterCategories(
+          categories,
+          categoryTypeSearch,
+          searchDates,
+          searchAmounts
+        )}
         errorMessage={errorMessage}
-
       />
       <SearchSection
         setSearchDates={setSearchDates}
