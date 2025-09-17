@@ -11,7 +11,6 @@ import { fetchCategories } from './services/categoryService';
 
 // Components
 import Items from '../../components/Items';
-import SearchSection from '../../components/search/SearchSection';
 import SearchBar from '../../components/layout/SearchBar';
 
 type Props = {};
