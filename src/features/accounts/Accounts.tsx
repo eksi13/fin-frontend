@@ -1,13 +1,17 @@
+// React
 import { useEffect, useState } from 'react';
 
+// Types
+import type { Account } from './types/accountTypes';
 import type { SearchDates, SelectableItem } from '../../types';
 
+// Utilities / Services
 import { filterAccounts } from './utils/filterAccounts';
+import { fetchAccounts } from './services/accountService';
 
+// Components
 import Items from '../../components/Items';
 import SearchSection from '../../components/search/SearchSection';
-import type { Account } from './types/accountTypes';
-import { fetchAccounts } from './services/accountService';
 
 type Props = {};
 
