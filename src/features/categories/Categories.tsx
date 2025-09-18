@@ -49,8 +49,6 @@ function Categories({}: Props) {
       });
   }, []);
 
-  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
-
   return (
     <>
       <Items
@@ -65,8 +63,6 @@ function Categories({}: Props) {
       />
       <SearchBar
         name={'Categories'}
-        buttonClicked={buttonClicked}
-        setButtonClicked={setButtonClicked}
         setSearchDates={[setSearchDates]}
         setSearchAmounts={setSearchAmounts}
         optionsSelectors={[

@@ -67,8 +67,6 @@ function Transactions({}: Props) {
       });
   }, []);
 
-  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
-
   return (
     <>
       <Items
@@ -89,8 +87,6 @@ function Transactions({}: Props) {
       />
       <SearchBar
         name={'Transactions'}
-        buttonClicked={buttonClicked}
-        setButtonClicked={setButtonClicked}
         setSearchDates={[setSearchDates, setSearchUpdated]}
         setSearchAmounts={setSearchAmounts}
         optionsSelectors={[
