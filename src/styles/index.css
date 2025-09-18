@@ -110,3 +110,11 @@ body {
   cursor: pointer;
   text-decoration: underline;
 }
+
+.searchbox {
+  border: 1px solid black;
+  box-shadow: none;
+  border-radius: 0px;
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
