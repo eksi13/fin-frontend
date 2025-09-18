@@ -7,7 +7,7 @@ import type {
 } from '../../types';
 import NewSearchComponent from '../search/SearchComponent';
 import SearchButton from '../search/SearchButton';
-import { useToggle } from '../search/hooks/useToggle';
+import useToggle from '../search/hooks/useToggle';
 
 // Types
 

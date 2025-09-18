@@ -10,8 +10,9 @@ import { filterCategories } from './utils/filterCategories';
 import { fetchCategories } from './services/categoryService';
 
 // Components
-import Items from '../../components/Items';
+import Items from '../../components/content/Items';
 import SearchBar from '../../components/layout/SearchBar';
+import Title from '../../components/content/Title';
 
 type Props = {};
 
@@ -51,8 +52,8 @@ function Categories({}: Props) {
 
   return (
     <>
+      <Title title={'Categories'} />
       <Items
-        title={'Categories'}
         items={filterCategories(
           categories,
           categoryTypeSearch,

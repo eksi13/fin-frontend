@@ -10,8 +10,9 @@ import { filterTransactions } from './utils/filterTransactions';
 import { fetchTransactions } from './services/transactionService';
 
 // Components
-import Items from '../../components/Items';
+import Items from '../../components/content/Items';
 import SearchBar from '../../components/layout/SearchBar';
+import Title from '../../components/content/Title';
 
 type Props = {};
 
@@ -69,20 +70,17 @@ function Transactions({}: Props) {
 
   return (
     <>
+      <Title title={'Transactions'}/>
       <Items
-        title={'Transactions'}
-        items={
-          // transactions
-          filterTransactions(
-            transactions,
-            searchAmounts,
-            searchDates,
-            searchLastUpdated,
-            categorySearch,
-            transactionTypeSearch,
-            accountSearch
-          )
-        }
+        items={filterTransactions(
+          transactions,
+          searchAmounts,
+          searchDates,
+          searchLastUpdated,
+          categorySearch,
+          transactionTypeSearch,
+          accountSearch
+        )}
         errorMessage={fetchError}
       />
       <SearchBar

@@ -10,8 +10,9 @@ import { filterAccounts } from './utils/filterAccounts';
 import { fetchAccounts } from './services/accountService';
 
 // Components
-import Items from '../../components/Items';
+import Items from '../../components/content/Items';
 import SearchBar from '../../components/layout/SearchBar';
+import Title from '../../components/content/Title';
 
 type Props = {};
 
@@ -49,12 +50,10 @@ function Accounts({}: Props) {
       });
   }, []);
 
-  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
-
   return (
     <>
+      <Title title={'Accounts'} />
       <Items
-        title={'Accounts'}
         items={filterAccounts(
           accounts,
           typeSearch,
@@ -65,13 +64,11 @@ function Accounts({}: Props) {
       />
       <SearchBar
         name={'Accounts'}
-        buttonClicked={buttonClicked}
-        setButtonClicked={setButtonClicked}
         setSearchDates={[setSearchDates]}
         optionsSelectors={[
-            { options: typeSearch, setter: setTypeSearch },
-            { options: currencySearch, setter: setCurrencySearch },
-          ]}
+          { options: typeSearch, setter: setTypeSearch },
+          { options: currencySearch, setter: setCurrencySearch },
+        ]}
         subject={'Amount'}
       />
     </>
