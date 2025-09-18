@@ -32,14 +32,14 @@ function DateSearch({ setSearchDates }: Props) {
     <form onSubmit={handleSubmit}>
       <div className="searchItem">
         <label htmlFor="meeting-time"></label>
-        <input
+        <input className='searchbox'
           type="date"
           id="dateSearchMin"
           name="meeting-time"
           min="1999-01-01"
           max="2030-12-31"
         />
-        <input
+        <input className='searchbox'
           type="date"
           id="dateSearchMax"
           name="meeting-time"
