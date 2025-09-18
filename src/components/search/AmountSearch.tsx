@@ -9,9 +9,10 @@ import type { AddItemFormElement } from '../../types/forms';
 
 type Props = {
   setSearchAmounts: React.Dispatch<React.SetStateAction<SearchAmounts>>;
+  subject: string;
 };
 
-function AmountSearch({ setSearchAmounts }: Props) {
+function AmountSearch({ setSearchAmounts, subject }: Props) {
   const handleAmountSearch = (
     e: React.FormEvent<AddItemFormElement>,
     setAmounts: React.Dispatch<React.SetStateAction<SearchAmounts>>
@@ -38,17 +39,17 @@ function AmountSearch({ setSearchAmounts }: Props) {
     <form className="searchItem" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="search" />
-        <input
+        <input className='searchbox'
           id="amountSearchMin"
           type="text"
           role="searchbox"
-          placeholder={`Search Min Amount`}
+          placeholder={`Search Min ${subject}`}
         />
-        <input
+        <input className='searchbox'
           id="amountSearchMax"
           type="text"
           role="searchbox"
-          placeholder={`Search Max Amount`}
+          placeholder={`Search Max ${subject}`}
         />
         <button className='button' type="submit">Submit</button>
       </div>
