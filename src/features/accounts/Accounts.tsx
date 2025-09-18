@@ -72,6 +72,7 @@ function Accounts({}: Props) {
             { options: typeSearch, setter: setTypeSearch },
             { options: currencySearch, setter: setCurrencySearch },
           ]}
+        subject={'Amount'}
       />
     </>
   );

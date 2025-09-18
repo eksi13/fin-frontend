@@ -72,6 +72,7 @@ function Categories({}: Props) {
         optionsSelectors={[
           { options: categoryTypeSearch, setter: setCategoryTypeSearch },
         ]}
+        subject={'Budget'}
       />
     </>
   );

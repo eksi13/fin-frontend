@@ -17,15 +17,15 @@ type Props = {};
 
 function Transactions({}: Props) {
   const [categorySearch, setCategorySearch] = useState<SelectableItem[]>([
-    { id: 0, name: 'Category 1', status: true },
-    { id: 1, name: 'Category 2', status: true },
-    { id: 2, name: 'Category 3', status: true },
+    { id: 0, name: 'Category 0', status: true },
+    { id: 1, name: 'Category 1', status: true },
+    { id: 2, name: 'Category 2', status: true },
   ]);
 
   const [accountSearch, setAccountSearch] = useState<SelectableItem[]>([
-    { id: 0, name: 'Account 1', status: true },
-    { id: 1, name: 'Account 2', status: true },
-    { id: 2, name: 'Account 3', status: true },
+    { id: 0, name: 'Account 0', status: true },
+    { id: 1, name: 'Account 1', status: true },
+    { id: 2, name: 'Account 2', status: true },
   ]);
 
   const [transactionTypeSearch, setTransactionTypeSearch] = useState<
@@ -74,6 +74,7 @@ function Transactions({}: Props) {
       <Items
         title={'Transactions'}
         items={
+          // transactions
           filterTransactions(
             transactions,
             searchAmounts,
@@ -97,6 +98,7 @@ function Transactions({}: Props) {
           { options: accountSearch, setter: setAccountSearch },
           { options: transactionTypeSearch, setter: setTransactionTypeSearch },
         ]}
+        subject={'Amount'}
       />
     </>
   );
