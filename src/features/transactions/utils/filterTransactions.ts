@@ -23,8 +23,8 @@ export function filterTransactions(
       (searchDates.max === null || +ta.date <= searchDates.max) &&
       (lastUpdated.min === null || +ta.lastUpdated >= lastUpdated.min) &&
       (lastUpdated.max === null || +ta.lastUpdated <= lastUpdated.max) &&
-      categories[ta.categoryId - 1].status &&
+      categories[ta.categoryId].status &&
       transactionTypes[ta.type].status &&
-      accounts[ta.accountId - 1].status
+      accounts[ta.accountId].status
   );
 }
